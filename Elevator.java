@@ -1,9 +1,10 @@
 package w7l1;
 // exam sample 1
+
 public class Elevator {
 
-    private char speed;
-    private int floor;
+    char speed;
+    int floor;
 
     public Elevator() {
         setspeed('F');
@@ -39,11 +40,6 @@ public class Elevator {
         }
     }
 
-    @Override
-    public String toString() {
-        return "elevator{" + "speed=" + speed + ", floor=" + floor + '}';
-    }
-
     public double getSpeedcost() {
         int speedcost = 0;
         switch (speed) {
@@ -70,7 +66,12 @@ public class Elevator {
     }
 
     public double getTotalcost() {
-        double totalcost = getSpeedcost() + getFloorcost() * 100;
+        double totalcost = getSpeedcost() + getFloorcost() + 100;
         return totalcost;
+    }
+
+    @Override
+    public String toString() {
+        return "elevator{" + "speed=" + speed + ", floor=" + floor + "}" + " totalcost = " + getTotalcost() + " floor cost = " + getFloorcost() + " speed cost = " + getSpeedcost();
     }
 }
